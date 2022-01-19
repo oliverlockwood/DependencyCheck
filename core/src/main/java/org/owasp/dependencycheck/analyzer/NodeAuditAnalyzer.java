@@ -205,10 +205,10 @@ public class NodeAuditAnalyzer extends AbstractNpmAnalyzer {
             if (yarnCheck.exists()) {
                 final String msg = "NodeAuditAnalyzer failed on " + dependency.getActualFilePath()
                         + " - yarn.lock was found; if package-lock.json was generated using synp, it may not be in the correct format.";
-                LOGGER.error(msg);
+                LOGGER.error(msg, e);
                 throw new AnalysisException(msg, e);
             }
-            LOGGER.error("NodeAuditAnalyzer failed on {}", dependency.getActualFilePath());
+            LOGGER.error("NodeAuditAnalyzer failed on {}", dependency.getActualFilePath(), e);
             throw e;
         }
     }

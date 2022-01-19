@@ -170,7 +170,7 @@ public class YarnAuditAnalyzer extends AbstractNpmAnalyzer {
             }
         } catch (Exception ex) {
             this.setEnabled(false);
-            LOGGER.debug("The {} has been disabled. Yarn executable was not found.", ex);
+            LOGGER.debug("The {} has been disabled. Yarn executable was not found.", getName(), ex);
             LOGGER.warn("The {} has been disabled. Yarn executable was not found.", getName());
             throw new InitializationException("Unable to read yarn audit output.", ex);
         }
